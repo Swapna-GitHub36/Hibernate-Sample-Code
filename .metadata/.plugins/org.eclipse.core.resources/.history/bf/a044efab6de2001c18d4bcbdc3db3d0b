@@ -1,0 +1,5 @@
+package com.gl.hibernateexampleusingjavaconfig.dao;
+
+public class EmployeeDao {
+
+}

@@ -1,0 +1,22 @@
+package com.gl.hibernateexample;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.gl.hibernateexample.entity.Employee;
+
+public class HibernateExample {
+
+	public static void main(String[] args) {
+		
+		Employee emp = new Employee(123, "Rama", 56000, "7643113245");
+		Transaction transaction = null;
+		Session session = null;
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+}

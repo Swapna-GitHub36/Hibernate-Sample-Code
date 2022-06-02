@@ -1,0 +1,5 @@
+package com.gl.hibernateexampleusingjavaconfig.util;
+
+public class HibernateUtil {
+
+}

@@ -1,0 +1,50 @@
+package com.gl.hibernateexampleusingjavaconfig.helper;
+
+import java.util.Scanner;
+
+import com.gl.hibernateexampleusingjavaconfig.dao.EmployeeDao;
+import com.gl.hibernateexampleusingjavaconfig.entity.Employee;
+
+public class EmployeeCRUDOperations {
+	EmployeeDao edao = new EmployeeDao();
+	Scanner sc = new Scanner(System.in);
+	Employee emp = new Employee();
+	public void displayEmployeeCRUDOperations() {
+		System.out.println("Enter the Operation ......");
+		System.out.println("1. Insert");
+		System.out.println("2. Update");
+		System.out.println("3. Delete");
+		System.out.println("4. Display All Employees");
+		System.out.println("5. Search An Employee");
+		int op = sc.nextInt();
+		switch (op) {
+		case 1:
+			edao.insertEmployee(readEmployeeDetails());
+			break;
+		case 2:
+			
+			break;
+		case 3:
+			
+			break;
+		case 4:
+			
+			break;
+		case 5:
+			
+			break;
+
+		default:
+			System.out.println("Not a right operation");
+			break;
+		}
+	}
+	private Employee readEmployeeDetails() {
+		System.out.println("Enter the Employee Details....");
+		System.out.println("Enter employee Name");
+		emp.setEmpName(sc.nextLine());
+		System.out.println("Enter employee Salary");
+		emp.setEmpSalary(sc.nextFloat());
+		return emp;
+	}
+}

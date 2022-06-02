@@ -1,0 +1,5 @@
+package com.gl.hibernateexample.util;
+
+public class HibernateUtil {
+
+}

@@ -1,0 +1,54 @@
+package com.gl.hibernateexample;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.gl.hibernateexample.entity.Employee;
+import com.gl.hibernateexample.util.HibernateUtil;
+
+public class HibernateExample {
+
+	public static void main(String[] args) {
+		
+		Employee emp = new Employee(123, "Rama", 56000, "7643113245");
+		Transaction transaction = null;
+		Session session = null;
+		try {
+			//open session
+			session = HibernateUtil.getSessionFactory().openSession();
+			//start transaction
+			transaction = session.beginTransaction();
+			//save employee object in to db
+			session.save(emp);
+			//commit transaction
+			transaction.commit();
+		} catch (Exception e) {
+			if(transaction!=null) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		
+		//display the employees
+		try {
+			//open session
+			session = HibernateUtil.getSessionFactory().openSession();
+			//start transaction
+			transaction = session.beginTransaction();
+			//select * from employee;
+			List<Employee> employeeList = session.createQuery("from Employee",Employee.class).list();
+		}catch (Exception e) {
+			if(transaction!=null) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+	}
+
+}

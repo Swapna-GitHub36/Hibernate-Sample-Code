@@ -1,0 +1,10 @@
+package com.gl.jdbcprepareddemo;
+
+public class JDBCUpdateUsingPreparedStatement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

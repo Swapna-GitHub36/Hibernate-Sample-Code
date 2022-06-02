@@ -1,0 +1,54 @@
+package com.gl.hibernateexampleusingjavaconfig.dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.gl.hibernateexampleusingjavaconfig.entity.Employee;
+import com.gl.hibernateexampleusingjavaconfig.util.HibernateUtil;
+
+public class EmployeeDao {
+	Transaction transaction = null;
+
+	public void insertEmployee(Employee emp) {
+
+		
+
+		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+
+			// start the transaction
+			transaction = session.beginTransaction();
+			// save employee object
+			session.save(emp);
+			// commit transaction
+			transaction.commit();
+
+		} catch (Exception e) {
+			if (transaction != null) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		}
+
+	}// insert employee
+
+	public List<Employee> selectAllEmployees() {
+
+		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+			return session.createQuery("from Employee", Employee.class).list();
+		}
+
+	}
+
+	public Employee searchAnEmployee(Long sempid){
+		
+	
+		try (Session session = HibernateUtil.getSessionFactory().openSession()) {	
+					// start the transaction
+					transaction = session.beginTransaction();
+					
+		}
+	}
+
+}

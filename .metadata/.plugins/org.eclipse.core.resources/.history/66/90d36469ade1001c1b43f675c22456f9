@@ -1,0 +1,54 @@
+package com.gl.hibernateexample.util;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
+public class HibernateUtil {
+	/*a service registry => is a contract defined for 
+	managing db services like connections,transaction etc. 
+	IT IS DEFINED IN org.hibernate.service.ServiceRegistry interface
+	
+		3 different implementation:
+		   => BootStrapServiceRegistry
+		   => StandardServiceRegistry
+		   => SessionFactoryServiceRegistry
+	*/
+
+	private static StandardServiceRegistry registry;
+	private static SessionFactory sessionfactory;
+	
+	public static SessionFactory getSessionFactory() {
+		if(sessionfactory == null) {
+			try {
+				//create registry
+				registry = new StandardServiceRegistryBuilder().configure().build();
+				
+				//Create MetaDataSources => helps in building SessionFactory
+				 MetadataSources sources = new MetadataSources(registry);
+				 
+				//create MetaData => it reads entity mapping and relationships from hibernate.cfg.xml file or java file
+				 Metadata metadata =  sources.getMetadataBuilder().build();
+				 
+				//create Session factory
+				 sessionfactory = metadata.getSessionFactoryBuilder().build();
+			
+			
+			}catch (Exception e) {
+				e.printStackTrace();
+				if(registry!=null) {
+					StandardServiceRegistryBuilder.destroy(registry);
+				}
+			}
+		}
+		return sessionfactory;
+	}
+	
+	public static void shutdown() {
+		if(registry!=null) {
+			StandardServiceRegistryBuilder.destroy(registry);
+		}
+	}
+}

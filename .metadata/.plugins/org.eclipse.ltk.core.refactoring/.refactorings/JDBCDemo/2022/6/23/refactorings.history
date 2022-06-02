@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;JDBCUsingMySql.java&apos; to &apos;FirstMavenProject/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;JDBCDemo&apos;&#x0D;&#x0A;- Destination element: &apos;FirstMavenProject/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;com.gl.jdbcdemo.JDBCUsingMySql.java&apos;" description="Copy compilation unit" destination="=FirstMavenProject/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/" element1="/src&lt;com.gl.jdbcdemo{JDBCUsingMySql.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1654084445613" units="1" version="1.0"/>
+</session>

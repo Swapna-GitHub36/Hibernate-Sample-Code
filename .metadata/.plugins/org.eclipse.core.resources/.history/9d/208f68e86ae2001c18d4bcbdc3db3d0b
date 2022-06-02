@@ -1,0 +1,16 @@
+package com.gl.hibernateexampleusingjavaconfig.entity;
+
+import javax.persistence.Entity;
+
+@Entity 
+public class Employee {
+	
+	private int empId;
+	private String empName;
+	private float empSalary;
+	
+	public Employee() {
+		// default constructor
+	}
+
+}

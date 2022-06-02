@@ -1,0 +1,19 @@
+package com.gl.hibernateexampleusingjavaconfig;
+
+import java.util.List;
+
+import com.gl.hibernateexampleusingjavaconfig.dao.EmployeeDao;
+import com.gl.hibernateexampleusingjavaconfig.entity.Employee;
+
+public class MainHibernateDemo {
+
+	public static void main(String[] args) {
+	
+		
+		;
+		
+
+
+	}
+
+}

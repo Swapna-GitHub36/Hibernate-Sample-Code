@@ -1,0 +1,18 @@
+package com.gl.hibernateexampleusingjavaconfig.helper;
+
+import java.util.Scanner;
+
+import com.gl.hibernateexampleusingjavaconfig.dao.EmployeeDao;
+
+public class EmployeeCRUDOperations {
+	EmployeeDao edao = new EmployeeDao();
+	Scanner sc = new Scanner(System.in);
+	public void displayEmployeeCRUDOperations() {
+		System.out.println("Enter the Operation ......");
+		System.out.println("1. Insert");
+		System.out.println("2. Update");
+		System.out.println("3. Delete");
+		System.out.println("4. Display All Employees");
+		System.out.println("5. Search An Employee");
+	}
+}

@@ -1,0 +1,5 @@
+package com.gl.hibernateexampleusingjavaconfig.helper;
+
+public class EmployeeCRUDOperations {
+
+}

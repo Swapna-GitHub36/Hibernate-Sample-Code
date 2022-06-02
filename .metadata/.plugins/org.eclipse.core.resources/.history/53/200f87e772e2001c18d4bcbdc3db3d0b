@@ -1,0 +1,22 @@
+package com.gl.hibernateexampleusingjavaconfig;
+
+import java.util.List;
+
+import com.gl.hibernateexampleusingjavaconfig.dao.EmployeeDao;
+import com.gl.hibernateexampleusingjavaconfig.entity.Employee;
+import com.gl.hibernateexampleusingjavaconfig.helper.EmployeeCRUDOperations;
+
+public class MainHibernateDemo {
+
+	public static void main(String[] args) {
+	
+		
+		EmployeeCRUDOperations empCRUD = new EmployeeCRUDOperations() ;
+		
+		empCRUD.displayEmployeeCRUDOperations();
+		
+
+
+	}
+
+}
